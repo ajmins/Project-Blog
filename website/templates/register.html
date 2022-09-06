@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}"
+        media="screen,projection" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="flex-wrapper">
+        <section class="container section" id="userAuth">
+            <div class="row">
+                <div class="col s12 l5">
+                    <div class="logo-container">
+                        <img src="../static/images/img.png" alt="logo">
+                    </div>
+                    <p>More people more opinions more thoughts</p>
+                </div>
+                <div class="col s12 l7 offest-l2">
+                    <ul class="tabs">
+                        <li class="tab col s12">
+                            <a href="#" class="black-text">Register</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <div class="col s12" id="registerUser">
+                        <form class="col s12" method="post">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="userName" type="text" class="validate" name="userName">
+                                    <label for="userName">First Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="userEmail" type="email" class="validate" name="userEmail">
+                                    <label for="userEmail">Email</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">phone</i>
+                                    <input id="userPhone" type="tel" class="validate" name="userPhone">
+                                    <label for="userPhone">Phone</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">fingerprint</i>
+                                    <input id="userPassword" type="password" class="validate" name="userPassword">
+                                    <label for="userPassword">Password</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <button class="waves-effect waves-light btn orange" type="submit"><i
+                                            class="material-icons left">send</i>Submit</button>
+                                </div>
+                                <div class="input-field col s6">
+                                    <a href="/" class="orange-text">Already have an account? <span
+                                            style="color:#7e57c2; font-weight:bold">Login</span></a><br><br><br>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if err %}
+            <div style="padding-right: 25%; padding-left: 25%">
+                <div class="flash errorCard card center " title="Invalid username or password"><pre style="position: relative; color: white;">{{ err_res }}</pre></div>
+        </div>
+        {% endif %}
+        <!--footer-->
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="center container align-footer">
+                    ©2022 All Rights Reserved, <span style="color:#7e57c2">BlogTime Pvt. Ltd.</span> Privacy & Terms
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tabs').tabs();
+        })
+    </script>
+</body>
+
+</html>

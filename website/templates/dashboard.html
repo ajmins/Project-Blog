@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+{% block title %}Dashboard{% endblock %} 
+{% block content %}
+
+<!-- {% if not listAll %}
+<div class="back col s3">
+    <button class="back-btn btn-flat btn-medium waves-effect waves-orange" onClick="categoryBack()">
+        <i class="material-icons">arrow_back</i>
+    </button>
+</div>
+{% endif %} -->
+{% for blog in blogs.items %}
+<div class="card">
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card-content black-text">
+              <span class="card-title">Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+
+       
+        </div>
+      </div>
+</div>
+
+
+{% endfor %}
+{% endblock %}
